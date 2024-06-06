@@ -14,6 +14,7 @@ class Message extends Model
         'content',
     ];
 
+    // RELATION IN RECIEVES(user)
     public function sender()
     {
         return $this->belongsTo(User::class, 'sender_id');

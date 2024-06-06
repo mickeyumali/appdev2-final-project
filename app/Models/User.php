@@ -42,12 +42,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
+    
+    // RELATION IN POST
     public function posts()
     { 
         return $this->hasMany(Post::class);
     }
 
+    // RELATION IN LIKES
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    // RELATION IN MESSAGES
     public function sentMessages()
     {
         return $this->hasMany(Message::class, 'sender_id');
