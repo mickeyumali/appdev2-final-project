@@ -25,4 +25,10 @@ class Post extends Model
     {
         return $this->hasMany(Like::class);
     }
+
+    // Relation in comments
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
