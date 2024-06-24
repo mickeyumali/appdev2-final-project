@@ -34,6 +34,9 @@ Route::middleware('auth:sanctum')->group(function () {
     //For the dashboard
     Route::get('/dashboard', [UserController::class, 'dashboard']);
 
+    // For user timeline
+    Route::get('/user/posts', [UserController::class, 'showLoggedInUserPosts']);
+
     Route::post('/posts', [PostController::class, 'store']);
     Route::put('/posts/{post}', [PostController::class, 'update']);
     Route::delete('/posts/{post}', [PostController::class, 'destroy']);
